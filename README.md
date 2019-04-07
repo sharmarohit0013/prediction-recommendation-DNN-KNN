@@ -1,5 +1,5 @@
 # prediction-recommendation-DNN-KNN
-A prediction and recommendation system for recovery after alarm condition occurred in an industrial environment
+A prediction and recommendation system for recovery after alarm condition occurred in an industrial environment using Deep Neural Network(DNN) and K-NN(k- nearest neighbor)
 
 ## Usecase 
 
