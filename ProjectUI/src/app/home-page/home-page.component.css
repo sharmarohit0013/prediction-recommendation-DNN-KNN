@@ -1,0 +1,6 @@
+.inputForm{
+    width : 20%;
+}
+.inputForm:focus {
+    border: 2px solid rgb(110, 106, 79);
+}

@@ -1,0 +1,19 @@
+<form name="IncorrectSolutionForm">
+  <h2 mat-dialog-title><B>Incorrect Solution</B></h2>
+  <h3>
+    Sensor Data:{{data.displayInputNode}}
+  </h3>
+  <div>
+    <input #enteredSolution placeholder="Please Enter the Solution" id="ESolution"class="w3-input w3-animate-input" type="text" style="width:180px"/>  
+  </div>
+  <h4><font color="red">*Note:-</font> After submiting please retrain the model for updates to take place,</h4>
+<h4> to retrain please click on retrain button on home-page </h4>
+
+<div mat-dialog-actions>
+    <button class="button buttonClose" type="button" mat-button (click)="onNoClick()">Close</button>
+    <button  class="button button1"  (click)="addUserSolution([enteredSolution.value])">Submit and Close</button>
+  </div>
+</form>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">

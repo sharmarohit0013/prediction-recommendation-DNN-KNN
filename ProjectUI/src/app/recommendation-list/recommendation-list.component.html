@@ -1,0 +1,33 @@
+<form name="recommendationForm">
+<h2 mat-dialog-title>Execution ID = {{data.id}}</h2>
+<div mat-dialog-content>
+  <h3>Recommendation List</h3> 
+  <table style="width:100%" class="table table-hover">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Solution</th>    
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let recomendation of data.recomendationList; let i = index" (click)="setClickedRow(i)" [class.active]="i == selectedRow">
+        <td>{{ recomendation.resultID }}</td>
+        <td>{{recomendation.result}}</td>
+      </tr>
+    </tbody>
+  </table> 
+  <label for="SID">Please enter ID of Recommendation Which Worked:-</label>
+  <br>
+  <input  width = "30%" type = "number" min="0" max="5" required id="SID" ng-model="IDModel" ng-required="true" #resultID value="{{data.recomendationList[selectedRow].resultID}}" class="w3-input w3-animate-input" style="width:135px"/>
+  <br>
+  <label for="SRecomm">Solution not in the Recommended List:-</label>
+  <br>
+  <input #resultSuggestion placeholder="Please Enter Solution" id="SRecomm"class="w3-input w3-animate-input" type="text" style="width:180px"/>   
+</div>
+<div mat-dialog-actions>
+  <button class="button buttonClose" type="button" mat-button (click)="onNoClick()">Close</button>
+  <button class="button buttonSendSuggestion" type="button" mat-button (click)="onSendSuggestionClick([resultID.value,resultSuggestion.value])">Submit & Close</button>
+</div>
+</form>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">

@@ -1,0 +1,9 @@
+
+.navbar-nav a.active {
+    background-color: #e7e7e7 !important;
+    color: #555 !important;
+}
+.table tr.active td {
+  background-color:#123456 !important;
+  color: white;
+} 

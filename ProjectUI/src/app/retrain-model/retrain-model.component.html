@@ -1,0 +1,10 @@
+<form name="retrainModelForm">
+    <h2 mat-dialog-title>Retrain Model</h2>
+</form>
+<h4><font color="red">*Note:-</font> Retraining the model will lead to a long running process at server side,</h4>
+  <h4> which will let to server blocking till the process is done. </h4>
+  <h4> To start the retraing please click on <b><i>Start Retraining</i></b></h4>
+<div mat-dialog-actions>
+    <button class="button buttonClose" type="button" mat-button (click)="onNoClick()">Close</button>
+    <button  class="button button1"  (click)="startRetraining()">Start Retraining</button>
+</div>

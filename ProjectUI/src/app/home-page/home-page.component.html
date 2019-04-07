@@ -1,0 +1,30 @@
+<div class="container">
+    <h2>Welcome to Rohit's Website</h2>
+</div>
+  
+<h1>Sensor Data</h1>
+  
+<div>
+    <h3>Enter new readings</h3>
+    <form>
+        <input class = "inputForm" #node1 placeholder="node1" value="3.3"/>
+        <input class = "inputForm" #node2 placeholder="node2" value="4.4"/>
+        <input class = "inputForm" #node3 placeholder="node3" value="5.5"/>
+        <input class = "inputForm" #node4 placeholder="node4" value="6.6"/>  
+        <input type="reset" class="button buttonClose"> 
+    </form> 
+    <button class="button button1" (click)="addUserInput([node1.value,node2.value,node3.value,node4.value])">Submit</button>
+    <button class="button button1" (click)="openDialogRetrainModel()">Retrain Model</button>
+    <h3>Current Run Result</h3>
+    <table>
+        <tr *ngFor="let userInput of userInputs.slice().reverse()" style="margin-bottom: 5px;">
+            <td>{{userInput.displayInputNode}}</td> 
+            <td> -Result = "{{userInput.alarmCondition}}"</td>
+            <td><button class="button buttonDelete" (click)="removeUserInput(userInput)">Delete</button></td>
+            <td><button class="button buttonEvaluateAgain" (click)="EvaluateAgain(userInput)">Evaluate Again</button></td>
+            <td><button class="button buttonDialog"type="button" mat-raised-button (click)="openDialogProposedRecomendation(userInput)" *ngIf="userInput.alarmCondition==='YES'">See Proposed Solution</button></td>
+            <td><button class="button buttonDialog"type="button" mat-raised-button (click)="openDialogIncorrectSolution(userInput)" *ngIf="userInput.alarmCondition==='NO'">Incorrect Solution</button></td>
+        </tr>        
+    </table>
+  </div>
+  
